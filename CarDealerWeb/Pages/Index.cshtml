@@ -1,0 +1,33 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="OuterBox">
+    <h1 class="Welcome">Welcome</h1>
+<div class="text-center">
+    <h3 class="minfarve">I created this shit. Yes, it looks ugly, but i works (semi). Deal with it.</h3>
+</div>
+<img src="./UglyMe.jpg" height="580" width="540" />
+</div>
+
+<style>
+    .OuterBox{
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        justify-content:start;
+    }
+
+    .Welcome{
+        display:flex;
+        margin: 12px;
+    }
+
+    .text-center{
+        display:flex;
+        justify-content:center;
+        margin: 12px;
+    }
+</style>

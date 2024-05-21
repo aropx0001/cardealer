@@ -1,0 +1,55 @@
+﻿@page
+@model CarDealerWeb.Pages.Buy_carModel
+@{
+}
+
+<div class="OuterBox">
+    <
+    <div>
+
+
+        <div>
+            <label>Fill out the form</label>
+            <input placeholder="CarID:" />
+            <input placeholder="Brand:" />
+            <input placeholder="Price:" />
+            <button>
+                Buy
+            </button>
+        </div>
+
+    </div>
+
+</div>
+
+<style>
+    .OuterBox{
+        display:flex;
+        justify-content: center;
+        height: 100%;
+        width: 100%;
+    }
+
+    .OuterBox >div{
+        display:flex;
+        height: 800px;
+        width: 100%;
+        justify-content:center;
+        flex-direction:column;
+    }
+
+    .OuterBox > div >div{
+        display: flex;
+        gap: 5px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 700px;
+        width: 100%;
+    }
+
+    .OuterBox > div > div >button{
+        display:flex;
+    }
+
+</style>

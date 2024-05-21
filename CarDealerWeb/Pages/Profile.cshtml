@@ -1,0 +1,87 @@
+﻿@page
+@model CarDealerWeb.Pages.ProfileModel
+@{
+}
+<div class="Main">
+    <div class="ProfileBox">
+
+            <div id="ProfileInfo">
+                <div>
+                    <div id="Navn">
+                        <label>Name: @Model.Person.firstname @Model.Person.lastname</label>
+                    </div>
+                    <div>
+                    <label>Type: @Model.Person.Type</label>
+                    </div>
+                    <div>
+                        <label>ID: @Model.Person.personID</label>
+                    </div>
+                    <div>
+                        <label>Balance: @(Model.Person.balance) DKK</label>
+                    </div>
+                </div>
+                <div>
+                    <img id ="pp"src ="./UglyMe.jpg" />
+                </div>
+            </div>
+    </div>
+    <div id="ProfileButtons">
+    <form method="post">
+        <div>
+            <input asp-for="@Model.Balance" placeholder="Add balance" required/>
+            <button class="AddBalanceBtn" type="submit"> Confirm</button>
+        </div>
+    </form>
+    <form asp-page-handler="noget" method="post">
+    <div>
+            <input asp-for="@Model.Firstname" placeholder="New firstname" required/>
+            <button class="AddBalanceBtn" type="submit"> Confirm</button>
+        </div>
+    </form>
+    
+</div>
+
+<style>
+
+    .Main{
+        display: flex;
+        flex-direction: column;
+        align-items:center;
+        width:auto;
+    }
+
+    .ProfileBox{
+    display:flex;
+    padding:12px 15px;
+    margin:20px;
+    border:1px solid black;
+    background-color: lightyellow;
+    height: 520px;
+    min-width: 620px;
+    border-radius: 3px
+    }
+
+    #ProfileInfo{
+    display:flex;
+    height: 80px;
+    min-width: 100%;
+    font-size: 20px;
+    justify-content:space-between;
+    border-radius: 3px;
+    text-transform:capitalize;
+    }
+
+    #pp{
+        display:flex;
+        height: 240px;
+        width: 200px;
+        border-radius:3px
+    }
+
+    #ProfileButtons{
+        display:flex;
+        flex-direction:row;
+        gap:5px;
+    }
+
+</style>

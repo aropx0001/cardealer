@@ -1,0 +1,63 @@
+﻿@page
+@model CarDealerWeb.Pages.Login
+@{
+}
+
+<div class="OutBox">
+    <div class="2ndBox">
+        <div class="ImgBox">
+            <img src="./LoginIMG.jpg" height="469" width="500" />
+        </div>
+        <form method="post">
+            <div class="LoginBox">
+                 
+                    <label for="uname"><b>Username</b></label>
+                    <input asp-for="@Model.Username" placeholder="Enter Username" required />
+
+                    <label for="psw"><b>Password</b></label>
+                    <input asp-for="Password" placeholder="Enter Password" required />
+
+                <button class="LoginButton" type="submit">Login </button> 
+                    <label>
+                        <input type="checkbox" checked="checked" name="remember" /> Remember me
+                    </label>
+            
+            </div>
+        </form>
+        <div class="BottumBox">
+        </div>
+    </div>
+</div>
+
+<style>
+    .OutBox{
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        justify-content:center;
+        margin-top:169px;
+        height:420px
+    }
+
+    .2ndBox{
+        display:flex;
+        justify-content:center;
+        align-items:center;
+    }
+
+    .LoginBox{
+        display:flex;
+        margin-top: 10px;
+        flex-direction:column;
+        align-items:center;
+        height:200px;
+        width:500px;
+    }
+
+    .LoginButton{
+        display:flex;
+        margin:4px;
+        width: 189px;
+        border:thin solid black;
+    }
+</style>

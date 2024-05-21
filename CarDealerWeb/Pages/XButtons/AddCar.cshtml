@@ -1,0 +1,63 @@
+﻿@page
+@using Cardealer.Models;
+@model CarDealerWeb.Pages.AddCarModel
+@{
+}
+
+<div class="OuterBox">
+    <div>
+        <div>
+            <label>Fill out the form</label>
+            <form method="post">
+                <select asp-for="@Model.Cars.Brand" asp-items="Html.GetEnumSelectList<CarBrand>()"></select>
+                <input asp-for="@Model.Cars.Model" placeholder="Model:" />
+                <input asp-for="@Model.Cars.Price" placeholder="Price:" />
+                
+                    <label>Instock?</label>
+                    <input asp-for= "@Model.Cars.InStock" type="checkbox"/>
+                <div>
+                    <button type="submit">
+                        Add car
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<style>
+    .OuterBox{
+        display:flex;
+        justify-content: center;
+        height: 100%;
+        width: 100%;
+    }
+
+    .OuterBox >div{
+        display:flex;
+        height: 800px;
+        width: 100%;
+        justify-content:center;
+        flex-direction:column;
+    }
+
+    .OuterBox > div >div{
+        display: flex;
+        gap: 5px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 700px;
+        width: 100%;
+    }
+
+    .OuterBox button{
+        display:flex;
+        
+    }
+
+    button{
+        display: flex;
+    }
+
+</style>

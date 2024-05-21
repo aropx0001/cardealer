@@ -1,0 +1,57 @@
+﻿@page
+@model CarDealerWeb.Pages.CarsModel
+@{
+}
+
+<div class="CarContainer">
+    <div class="ListOfCars">
+        <input placeholder="search" />
+
+        <div id="text">
+            @foreach (var car in Model.Cars)
+            {
+                <div>
+                    <div>
+                        <label class="Label1">Id: @car.CarID</label>
+                    </div>
+                    <div class="BrandModelBox">
+                        <label class="Label2">@car.Brand @car.Model</label>
+                    </div>
+                    <div>
+                        <label class="Label3">@(car.Price)DKK</label>
+                    </div>
+                </div>
+            }
+        </div>
+
+        <a href="/XButtons/AddCar" target="_blank" title="Open add car-link">
+            Add new car
+        </a>
+    </div>
+
+    <div class="Box2">
+        <div class="BoxensBox1">
+            <label>CarID</label>
+            <img id="SickLambo" src="./SickLambo.png" height="380" width="340" />
+        </div>
+
+        <div class="BoxensBox2">
+            <button class="Knap1">
+                <a href="/XButtons/Buy car" target="_blank" title="Open add car-link">
+                    Buy car
+                </a>
+            </button>
+            <button class="Knap2">
+                <a href="/XButtons/Update car" target="_blank" title="Open add car-link">
+                    Update car
+                </a>
+            </button>
+            <button class="Knap3">
+                <a href="/XButtons/Delete car" target="_blank" title="Open add car-link">
+                    Delete car
+                </a>
+
+            </button>
+        </div>
+    </div>
+</div>
