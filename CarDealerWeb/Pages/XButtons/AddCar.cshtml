@@ -8,13 +8,14 @@
     <div>
         <div>
             <label>Fill out the form</label>
-            <form method="post">
-                <select asp-for="@Model.Cars.Brand" asp-items="Html.GetEnumSelectList<CarBrand>()"></select>
+            <form class="AddCarForm" method="post">
+                <select style="width:189px; height:30px; " asp-for="@Model.Cars.Brand" asp-items="Html.GetEnumSelectList<CarBrand>()"></select>
                 <input asp-for="@Model.Cars.Model" placeholder="Model:" />
                 <input asp-for="@Model.Cars.Price" placeholder="Price:" />
-                
-                    <label>Instock?</label>
-                    <input asp-for= "@Model.Cars.InStock" type="checkbox"/>
+                <div>
+                    <label>Car is Currently In Stock</label>
+                    <input asp-for="@Model.Cars.InStock" type="checkbox" />
+                </div>
                 <div>
                     <button type="submit">
                         Add car
@@ -26,22 +27,30 @@
 </div>
 
 <style>
-    .OuterBox{
-        display:flex;
+    .OuterBox {
+        display: flex;
         justify-content: center;
         height: 100%;
         width: 100%;
     }
 
-    .OuterBox >div{
-        display:flex;
-        height: 800px;
-        width: 100%;
-        justify-content:center;
-        flex-direction:column;
+/*        .OuterBox > div {
+            display: flex;
+            height: 800px;
+            width: 100%;
+            justify-content: center;
+            flex-direction: column;
+        }*/
+
+    .AddCarForm {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        align-items: center;
+        justify-content: center;
     }
 
-    .OuterBox > div >div{
+    .OuterBox > div > div {
         display: flex;
         gap: 5px;
         flex-direction: column;
@@ -51,12 +60,11 @@
         width: 100%;
     }
 
-    .OuterBox button{
-        display:flex;
-        
+    .OuterBox button {
+        display: flex;
     }
 
-    button{
+    button {
         display: flex;
     }
 

@@ -17,12 +17,22 @@ namespace CarDealerWeb.Pages
         [BindProperty]
         public Car Cars { get; set; }
 
-        public void OnGet()
+        public IActionResult OnGet()
         {
+            int? type = HttpContext.Session.GetInt32("Type");
 
+            
+
+            if (type != 1)
+            {
+                return Redirect("/");
+            }
+            return Page();
         }
+
         public void OnPost()
         {
+            
             _dealer.AddCar(Cars);
         }
 

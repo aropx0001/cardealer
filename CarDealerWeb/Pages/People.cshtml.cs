@@ -21,5 +21,7 @@ namespace CarDealerWeb.Pages
         {
             Person = _dealer.GetDealers();
         }
+        
+
     }
 }

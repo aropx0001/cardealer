@@ -30,7 +30,10 @@
                             <a class="nav-link text-dark" asp-area="" asp-page="/People">People</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Profile">Profile</a>
+                            @if(Context.Session.GetInt32("ID") != null)
+                            {
+                                <a class="nav-link text-dark" asp-area="" asp-page="/Profile">Profile</a>
+                            }
                         </li>
                         <li class="nav-item2">
                             @if(Context.Session.GetInt32("ID") == null)

@@ -17,8 +17,10 @@ namespace Cardealer.Models
         public List<Car> BoughtCars = new();
         public string username;
         public string password;
+        public string quote;
 
-        public Person(int personID, string firstname, string lastname, string username, string password)
+        //Constructor
+        public Person(int personID, string firstname, string lastname, string username, string password, string quote)
         {
             this.personID = personID;
             this.firstname = firstname;
@@ -26,6 +28,12 @@ namespace Cardealer.Models
             this.balance = 0;
             this.username = username;
             this.password = password;
+            this.quote = quote;
+        }
+
+        public Person()
+        {
+
         }
     }
 }

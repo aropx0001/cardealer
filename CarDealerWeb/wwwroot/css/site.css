@@ -22,32 +22,48 @@ body {
   background-color: oldlace;
 }
 
+.CarTitle{
+    display:flex;
+    justify-content:center;
+}
+
+.CarOuterBox{
+    display:flex;
+    margin-top: 10px;
+    justify-content:center;
+}
+
 .CarContainer {
-    background-color: lightyellow;
+    background-color: lightsteelblue;
     border: 1px solid black;
     display: flex;
-    justify-content: space-around;
-    gap: 20px;
+    justify-content: center;
     font-size: 18px;
     border-radius: 5px;
+    width:fit-content;
 }
 
 .ListOfCars {
     padding: 12px 15px;
-    margin: 20px;
-    border: 1px solid black;
+    margin-top: 20px;
     background-color: lightsteelblue;
     height: 600px;
-    min-width: 380px;
+    width: 448px;
+    border-radius: 5px;
+}
+
+.BuyListOfCars {
+    padding: 12px 15px;
+    height: 400px;
+    width: 448px;
     border-radius: 5px;
 }
 
 .Box2 {
     background-color: lightsteelblue;
-    margin: 20px;
+    margin-top: 20px;
     padding: 12px 15px;
     flex-direction: column;
-    border: 1px solid black;
     height: 600px;
     min-width: 400px;
     justify-content: center;
@@ -62,6 +78,7 @@ body {
     padding: 5px;
     border: 1px solid black;
     border-radius: 3px;
+    overflow-y:auto;
 }
 .Label1{
     display:flex;
@@ -96,7 +113,7 @@ body {
     background-color: ghostwhite;
     justify-content: flex-start;
     flex-direction: column;
-    height: 170px;
+    height: 150px;
     width: 350px;
     border: 1px solid black;
     border-radius: 3px;
@@ -118,7 +135,7 @@ body {
     border: 1px solid black;
     border-radius: 3px;
     margin: 5px;
-    background-color: cornsilk;
+    background-color: gainsboro;
 }
 
 #text > div {

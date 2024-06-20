@@ -3,11 +3,25 @@
 @using Cardealer.Models;
 
 @{
-
+}
 <div class="OuterBoxA">
-    <h1>People</h1>
-    <div class="Box2People">
-            <div>
+    <h1>Staff</h1>
+
+    <div class="StaffBox">
+        @foreach (Person dealer in Model.Person)
+        {
+            <div class="StaffOuter">
+                <h4>@dealer.firstname @dealer.lastname</h4>
+                <div class="Box2People">
+                    <img class="staffImages" src="/images/staff/@(dealer.personID).jpg" alt="@dealer.firstname @dealer.lastname image" />
+                    <h10>@dealer.quote</h10>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+@*<div>
                 <h3>Dealers</h3>
             </div>
             @foreach (Person dealer in Model.Person)
@@ -16,36 +30,52 @@
                     <label >@dealer.firstname @dealer.lastname</label>
                 </div>
             }
-        </div>
-</div>
-}
+        </div>*@
+
+
 
 <style>
-    .OuterBoxA{
-        display:flex;
+    .OuterBoxA {
+        display: flex;
         padding: 12px 15px;
         margin: 50px;
-        background-color: lightyellow;
         height: 600px;
         min-width: 380px;
         border-radius: 5px;
         align-items: center;
         justify-content: start;
-        flex-direction:column;
-        text-transform:capitalize;
+        flex-direction: column;
+        text-transform: capitalize;
     }
 
-    .Box2People{
-        display:flex;
+    .StaffOuter{
+        text-align:center;
+
+    }
+
+    .StaffBox {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .Box2People {
+        display: flex;
         border: 1px solid;
-        flex-direction:column;
+        flex-direction: column;
         align-items: center;
         height: 300px;
         width: 240px;
-        margin: 50px;
-        background-color: lightgoldenrodyellow;
+        margin-right: 20px;
+        margin-top:10px;
+        background-color: lightsteelblue;
+        gap:5px;
     }
 
-
-
+    .staffImages {
+        display: flex;
+        height: 167px;
+        width: 238px;
+    }
 </style>

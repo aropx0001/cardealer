@@ -2,6 +2,7 @@ using Cardealer;
 using Cardealer.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using System.Security.Cryptography.X509Certificates;
 
 namespace CarDealerWeb.Pages
 {
@@ -14,8 +15,10 @@ namespace CarDealerWeb.Pages
         public ProfileModel(CarDealer dealer)
         {
             _dealer = dealer;
+            
         }
-
+        [BindProperty(SupportsGet = true)]
+        public int Year { get; set; }
         [BindProperty]
         public double? Balance { get; set; }
 
@@ -24,6 +27,9 @@ namespace CarDealerWeb.Pages
 
         [BindProperty]
         public string Lastname { get; set; }
+
+        [BindProperty]
+        public Person car { get; set; }
 
         public IActionResult OnGet()
         {
@@ -45,18 +51,29 @@ namespace CarDealerWeb.Pages
             int? FoundID = HttpContext.Session.GetInt32("ID");
 
             if (FoundID == null)
-            {
                 return Redirect("/Login");
-            }
+
             Person = _dealer.GetPersonById(FoundID.Value);
-            _dealer.AddBalance(Person.personID, Balance);
-;
+
+            if (Balance != null)
+                _dealer.AddBalance(Person.personID, Balance);
+
             return Page();
         }
 
-        public IActionResult NogetOnPost()
+        public IActionResult OnPostNoget()
         {
-            
+            //Vi henter personen igen fordi ellers sletter den dataen fra person. Derefter vil den sige person er null, når vi returner page.
+            int? FoundID = HttpContext.Session.GetInt32("ID");
+
+            if (FoundID == null)
+                return Redirect("/Login");
+
+            Person = _dealer.GetPersonById(FoundID.Value);
+
+            Person.firstname = Firstname;
+            Person.lastname = Lastname;
+
             return Page();
         }
 

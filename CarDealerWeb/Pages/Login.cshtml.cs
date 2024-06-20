@@ -35,9 +35,17 @@ namespace CarDealerWeb.Pages
             if (foundPerson != null)
             {
                 HttpContext.Session.SetInt32("ID", foundPerson.personID);
-                
+                HttpContext.Session.SetInt32("Type", (int)foundPerson.Type);
+
                 return RedirectToPage("/Profile");
             }
+            return Page();
+        }
+
+        public IActionResult OnPostSignUp()
+        {
+
+
             return Page();
         }
     }

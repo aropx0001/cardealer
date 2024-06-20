@@ -11,7 +11,7 @@ namespace Cardealer.Models
         string customer;
         string Dealer;
 
-        public Customer(int personID, string firstname, string lastname, string username, string password) : base(personID,firstname,lastname,username,password)
+        public Customer(int personID, string firstname, string lastname, string username, string password, string quote) : base(personID,firstname,lastname,username,password,quote)
         {
             this.Type = PersonType.Customer;
         }
@@ -19,7 +19,7 @@ namespace Cardealer.Models
 
     internal class Dealer : Person
     {
-        public Dealer(int personID, string firstname, string lastname, string username, string password) : base(personID, firstname, lastname, username, password)
+        public Dealer(int personID, string firstname, string lastname, string username, string password, string quote) : base(personID, firstname, lastname, username, password, quote)
         {
             this.Type = PersonType.Dealer;
         }

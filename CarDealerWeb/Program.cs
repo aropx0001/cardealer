@@ -1,4 +1,5 @@
 using Cardealer;
+using Cardealer.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -7,6 +8,7 @@ builder.Services.AddRazorPages();
 
 builder.Services.AddSingleton(x => new CarDealer("HelloWorld"));
 builder.Services.AddSession();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

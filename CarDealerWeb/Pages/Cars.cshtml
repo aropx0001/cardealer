@@ -2,56 +2,57 @@
 @model CarDealerWeb.Pages.CarsModel
 @{
 }
+<h2 class="CarTitle">Cars</h2>
+<div class="CarOuterBox">
+    <div class="CarContainer">
+        <div class="ListOfCars">
+            <input style="width: 418px;" placeholder="Search" />
 
-<div class="CarContainer">
-    <div class="ListOfCars">
-        <input placeholder="search" />
+            <div id="text">
+                @foreach (var car in Model.Cars)
+                {
+                    <div>
+                        <div>
+                            <label class="Label1">Id: @car.CarID</label>
+                        </div>
+                        <div class="BrandModelBox">
+                            <label class="Label2">@car.Brand @car.Model</label>
+                        </div>
+                        <div>
+                            <label class="Label3">@(car.Price)DKK</label>
+                        </div>
+                    </div>
+                }
+            </div>
 
-        <div id="text">
-            @foreach (var car in Model.Cars)
+            @if (HttpContext.Session.GetInt32("Type") == 1)
             {
-                <div>
-                    <div>
-                        <label class="Label1">Id: @car.CarID</label>
-                    </div>
-                    <div class="BrandModelBox">
-                        <label class="Label2">@car.Brand @car.Model</label>
-                    </div>
-                    <div>
-                        <label class="Label3">@(car.Price)DKK</label>
-                    </div>
-                </div>
+                <a href="/XButtons/AddCar" target="_blank" title="Open add car-link">
+                    Add new car
+                </a>
             }
+
         </div>
 
-        <a href="/XButtons/AddCar" target="_blank" title="Open add car-link">
-            Add new car
-        </a>
-    </div>
+        <div class="Box2">
+            <div class="BoxensBox1">
+                <label>CarID</label>
+                <img id="SickLambo" src="./SickLambo.png" height="380" width="340" />
+            </div>
 
-    <div class="Box2">
-        <div class="BoxensBox1">
-            <label>CarID</label>
-            <img id="SickLambo" src="./SickLambo.png" height="380" width="340" />
-        </div>
-
-        <div class="BoxensBox2">
-            <button class="Knap1">
-                <a href="/XButtons/Buy car" target="_blank" title="Open add car-link">
+            <div class="BoxensBox2">
+                <a class="Knap1" href="/XButtons/Buy car" target="_blank" title="Open add car-link">
                     Buy car
                 </a>
-            </button>
-            <button class="Knap2">
-                <a href="/XButtons/Update car" target="_blank" title="Open add car-link">
+
+                <a class="Knap2" href="/XButtons/Update car" target="_blank" title="Open add car-link">
                     Update car
                 </a>
-            </button>
-            <button class="Knap3">
-                <a href="/XButtons/Delete car" target="_blank" title="Open add car-link">
+
+                <a class="Knap3" href="/XButtons/Delete car" target="_blank" title="Open add car-link">
                     Delete car
                 </a>
-
-            </button>
+            </div>
         </div>
     </div>
 </div>

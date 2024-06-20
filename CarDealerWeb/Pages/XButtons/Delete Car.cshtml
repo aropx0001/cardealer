@@ -1,14 +1,11 @@
 ﻿@page
-@using Cardealer.Models;
+@using Cardealer.Models
 @model CarDealerWeb.Pages.Shared.Buttons.Delete_CarModel
-@{
-}
 
 <div class="OuterBox">
-
     <div>
-        <form>
-            <h2 style="border-bottom-style:solid">Car removal hacker tool</h2>
+        <form method="post">
+            <h2 style="border-bottom-style: solid">Car removal hacker tool</h2>
             <div class="BoxNoget">
                 @foreach (var car in Model.Cars)
                 {
@@ -17,12 +14,12 @@
                             @car.CarID. @car.Brand @car.Model @(car.Price)DKK
                         </div>
                         <div>
-                            <input type="checkbox"/>
+                            <input type="checkbox" name="SelectedCarIDs" value="@car.CarID" />
                         </div>
                     </div>
                 }
             </div>
-                <button type="submit">Remove</button>
+            <button type="submit">Remove</button>
         </form>
     </div>
 </div>
@@ -33,25 +30,25 @@
         min-height: 800px;
         width: 100%;
         align-items: center;
-        justify-content:;
-        flex-direction:column;
+        justify-content: center;
+        flex-direction: column;
     }
 
-            .OuterBox > div form {
-                display: flex;
-                gap: 5px;
-                flex-direction: column;
-                justify-content: flex-start;
-                align-items: center;
-                height: 700px;
-                width: 100%;
-            }
+        .OuterBox > div form {
+            display: flex;
+            gap: 5px;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            height: 700px;
+            width: 100%;
+        }
 
         .OuterBox button {
             display: flex;
             border-radius: 3px;
             width: 72px;
-            align-items:flex-end;
+            align-items: flex-end;
         }
 
         .OuterBox div form {
@@ -61,7 +58,7 @@
             border-radius: 3px;
             background-color: ghostwhite;
             flex-direction: column;
-            align-content:start;
+            align-content: start;
             height: 600px;
             width: 410px;
         }
@@ -71,25 +68,23 @@
                 font-size: 20px;
                 flex-direction: row;
                 margin: 1px;
-                /*border: 1px solid black;*/
                 border-radius: 3px;
             }
 
     .BoxNoget {
         display: flex;
-        flex-direction:column;
+        flex-direction: column;
         width: 400px;
-        height:100%;
-        overflow-y:auto;
+        height: 100%;
+        overflow-y: auto;
     }
 
-    .Noget{
-        display:flex;
-        align-items:center;
+    .Noget {
+        display: flex;
+        align-items: center;
         justify-content: space-between;
         flex-direction: row;
         margin: 5px;
-        border-bottom-style:dotted;
+        border-bottom-style: dotted;
     }
-
 </style>

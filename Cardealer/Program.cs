@@ -9,6 +9,7 @@ using System.Runtime.ConstrainedExecution;
 using System.Runtime.CompilerServices;
 using System.Reflection.Metadata.Ecma335;
 using System.Diagnostics;
+using System.Text;
 
 namespace Cardealer
 {
@@ -289,6 +290,7 @@ namespace Cardealer
             string input2 = "x";
             string input3 = "x";
             PersonType input4 = PersonType.Customer;
+            string input5;
             
 
             do
@@ -342,11 +344,14 @@ namespace Cardealer
                     input4 = (PersonType)tal;
                     break;
                 }
+                input5 = Console.ReadLine();
                 break;
+
+                
             } while (true);
             
             //Console.WriteLine($"\nUser creation complete.\nUserID: {dealer.People.Max(x => x.personID) + 1}\n");
-            dealer.CreatePerson(firstname: input1, lastname: input2, password: input3,username: "", type: input4);
+            dealer.CreatePerson(firstname: input1, lastname: input2, password: input3,username: "", type: input4, quote: input5);
         }
 
         /// <summary>
@@ -357,7 +362,7 @@ namespace Cardealer
         static bool AccesManager(bool print)
         {
             if (print && LoggedInPerson.Type != PersonType.Dealer)
-                Console.WriteLine("\nAcces Denied Mofo");
+                return false;
 
             return LoggedInPerson is not null && LoggedInPerson.Type == PersonType.Dealer;
         }
