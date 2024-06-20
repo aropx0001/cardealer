@@ -25,7 +25,7 @@ namespace CarDealerWeb.Pages
 
             if (type != 1)
             {
-                return Redirect("/");
+                return Redirect("/  ");
             }
             return Page();
         }
