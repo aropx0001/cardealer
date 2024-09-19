@@ -34,7 +34,7 @@ body {
 }
 
 .CarContainer {
-    background-color: lightsteelblue;
+    background-color: linen;
     border: 1px solid black;
     display: flex;
     justify-content: center;
@@ -46,7 +46,7 @@ body {
 .ListOfCars {
     padding: 12px 15px;
     margin-top: 20px;
-    background-color: lightsteelblue;
+    background-color: linen;
     height: 600px;
     width: 448px;
     border-radius: 5px;
@@ -60,7 +60,7 @@ body {
 }
 
 .Box2 {
-    background-color: lightsteelblue;
+    background-color: linen;
     margin-top: 20px;
     padding: 12px 15px;
     flex-direction: column;

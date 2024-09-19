@@ -44,8 +44,6 @@ namespace CarDealerWeb.Pages
 
         public IActionResult OnPostSignUp()
         {
-
-
             return Page();
         }
     }

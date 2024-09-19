@@ -17,8 +17,6 @@ namespace CarDealerWeb.Pages
             _dealer = dealer;
             
         }
-        [BindProperty(SupportsGet = true)]
-        public int Year { get; set; }
         [BindProperty]
         public double? Balance { get; set; }
 
@@ -27,9 +25,6 @@ namespace CarDealerWeb.Pages
 
         [BindProperty]
         public string Lastname { get; set; }
-
-        [BindProperty]
-        public Person car { get; set; }
 
         public IActionResult OnGet()
         {

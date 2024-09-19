@@ -14,14 +14,16 @@ public class CarDealer
     public CarDealer(string firmanavn)
     {
         People = new List<Person>();
-        People.Add(new Dealer(1, "aron", "sucka", "aropx0001", "gedepis", "“When I was a child, ladies and gentlemen, I was a dreamer.”"));
-        People.Add(new Dealer(2, "emil", "sensei", "emilx0001", "gedepis", "“Before the battle of the fist comes the battle of the mind.”"));
-        People.Add(new Dealer(3, "thomas", "hjælpelærer", "thomx007", "gedepis", "“Bluuuuuuuueew fortytuuuueew, tactic tuesday. hurtty hut”"));
-        People.Add(new Dealer(4, "brian", "Translator", "brian0001", "gedepis", "He knows Spanish. ”Me estás tomando el pelo.”"));
-        People.Add(new Dealer(5, "sammy", "html-ekspert", "sammy0001", "gedepis", "Sindsyg til HTML"));
-        People.Add(new Dealer(6, "mohamad", "Director", "mohamad0001", "gedepis", "I decide if you flex or no"));
-        People.Add(new Dealer(7, "max", "techguy", "max0001", "gedepis", "He fixes stuff. (breaks stuff most of the time)"));
-        People.Add(new Dealer(8, "benjamin", "Kantinedame", "benjamin0001", "gedepis", "Good at looking important. He also plays League of Legends. Loves budget capri-sonne"));
+        People.Add(new Dealer(1, "aron", "elev", "aropx0001", "1234", "“When I was a child, ladies and gentlemen, I was a dreamer.”"));
+        People.Add(new Dealer(2, "emil", "sensei", "emilx0001", "1234", "“Before the battle of the fist comes the battle of the mind.”"));
+        People.Add(new Dealer(3, "thomas", "hjælpelærer", "thomx007", "1234", "“Bluuuuuuuueew fortytuuuueew, tactic tuesday. hurtty hut”"));
+        People.Add(new Dealer(4, "brian", "Translator", "brian0001", "1234", "He knows Spanish. ”Me estás tomando el pelo.”"));
+        People.Add(new Dealer(5, "sammy", "html-ekspert", "sammy0001", "1234", "Sindsyg til HTML"));
+        People.Add(new Dealer(6, "mohamad", "Director", "mohamad0001", "1234", "I decide if you flex or no"));
+        People.Add(new Dealer(7, "max", "techguy", "max0001", "1234", "He fixes stuff. (breaks stuff most of the time)"));
+        People.Add(new Dealer(8, "benjamin", "Lunchlady", "benjamin0001", "1234", "Good at looking important. He also plays League of Legends. Loves budget capri-sonne"));
+
+        //Dealer d = new() { Username = 76, Password = 129 };
 
         this.firmanavn = firmanavn;
         LoadCars();
@@ -34,19 +36,19 @@ public class CarDealer
 
     public int CreatePerson(string firstname, string lastname, PersonType type, string username, string password, string quote)
     {
-        int noget = People.Max(x => x.personID);
+        int id = People.Max(x => x.personID);
 
         switch (type)
         {
             case PersonType.Dealer:
-                People.Add(new Dealer(++noget, firstname, lastname, username, password, quote));
+                People.Add(new Dealer(++id, firstname, lastname, username, password, quote));
                 break;
 
             case PersonType.Customer:
-                People.Add(new Customer(++noget, firstname, lastname, username, password, quote));
+                People.Add(new Customer(++id, firstname, lastname, username, password, quote));
                 break;
         }
-        return noget;
+        return id;
     }
 
     public string DeletePersonByID(int id)
@@ -57,7 +59,6 @@ public class CarDealer
 
     public string AddBalance(int id, double? balance)
     {
-
         if (balance < 0)
         {
             if (balance <= 0) Console.WriteLine("\nTransaction failed. Try again\n");
